@@ -1,0 +1,582 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Fede Godoy · DJ · Presskit</title>
+<meta name="description" content="Presskit de Fede Godoy, DJ de Córdoba, Argentina. Tech house, deep house y progressive. Bio, mixes, videos, rider técnico y contacto de booking.">
+<meta name="theme-color" content="#0a0e0d">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Fede Godoy · DJ · Presskit">
+<meta property="og:description" content="DJ de Córdoba, Argentina. Tech house, deep house y progressive. Booking: fede.godoy1@gmail.com">
+<meta property="og:image" content="/img/og.jpg">
+<meta property="og:locale" content="es_AR">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preload" as="image" href="img/fg-116.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@500;800;900&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: escenas a pantalla completa, fijadas mientras el scroll las anima (scrollytelling).
+   Paleta sacada por k-means de las fotos: pared turquesa, sombra de concreto y el rojo de la remera. */
+:root {
+  --ink: #0a0e0d;        /* sombras de las fotos (#101312) */
+  --deep: #0f3a36;       /* turquesa en sombra (#13514c) */
+  --teal: #1a7e75;       /* pared turquesa media */
+  --aqua: #34d6bd;       /* turquesa al sol (#10d0b5) — acento */
+  --bone: #dbe5e1;       /* gris claro verdoso (#b5c8c3) — texto */
+  --concrete: #8c9693;   /* concreto (#686c69) — texto secundario */
+  --signal: #e4473b;     /* rojo de la remera — uso mínimo */
+  --line: rgba(219, 229, 225, .14);
+
+  --display: "Big Shoulders Display", "Oswald", "Arial Narrow", Impact, sans-serif;
+  --body: "Instrument Sans", "Helvetica Neue", Arial, sans-serif;
+  --mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+
+  --gutter: clamp(16px, 4vw, 56px);
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--ink);
+  color: var(--bone);
+  font: 400 16px/1.6 var(--body);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+img { display: block; max-width: 100%; }
+a { color: inherit; }
+:focus-visible { outline: 2px solid var(--aqua); outline-offset: 3px; }
+h1, h2, h3 { text-wrap: balance; margin: 0; }
+p { margin: 0; }
+
+.eyebrow {
+  font: 500 12px/1 var(--mono);
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--aqua);
+}
+.wrap { padding-inline: var(--gutter); }
+
+/* ---------- Nav ---------- */
+.nav {
+  position: fixed; inset: 0 0 auto 0; z-index: 50;
+  display: flex; align-items: center; justify-content: space-between; gap: 16px;
+  padding: calc(14px + env(safe-area-inset-top, 0px)) var(--gutter) 14px;
+  mix-blend-mode: difference;
+  color: #fff;
+}
+.nav__mark { font: 900 22px/1 var(--display); letter-spacing: .02em; text-decoration: none; }
+.nav__links { display: flex; gap: clamp(12px, 2.4vw, 28px); list-style: none; margin: 0; padding: 0; }
+.nav__links a { font: 500 12px/1 var(--mono); letter-spacing: .12em; text-transform: uppercase; text-decoration: none; }
+.nav__links a:hover { text-decoration: underline; text-underline-offset: 4px; }
+@media (max-width: 560px) { .nav__links li:not(:last-child) { display: none; } }
+
+
+/* ---------- Escena 1: Hero ---------- */
+.hero {
+  position: relative; height: 100svh; min-height: 560px; overflow: hidden;
+  display: grid; align-items: end;
+}
+.hero__img {
+  position: absolute; top: 0; bottom: 0; right: 0; left: auto;
+  width: 54vw; height: 100%; max-width: 100%;
+  object-fit: cover; object-position: 50% 28%;
+  transform-origin: 50% 30%;
+}
+.hero__shade {
+  position: absolute; inset: 0;
+  background:
+    linear-gradient(90deg, var(--ink) 0%, var(--ink) 44%, rgba(10,14,13,.55) 52%, rgba(10,14,13,0) 66%),
+    linear-gradient(0deg, var(--ink) 0%, rgba(10,14,13,0) 30%);
+}
+@media (max-width: 820px) {
+  .hero__img { width: 100%; left: 0; object-position: 50% 22%; }
+  .hero__shade { background: linear-gradient(0deg, var(--ink) 0%, rgba(10,14,13,.55) 38%, rgba(10,14,13,0) 62%); }
+}
+.hero__content {
+  position: relative; z-index: 2;
+  padding: 0 var(--gutter) clamp(48px, 9vh, 96px);
+  display: grid; gap: 20px;
+}
+.hero__name {
+  font: 900 clamp(76px, 17vw, 260px)/.82 var(--display);
+  text-transform: uppercase; letter-spacing: -.01em;
+  color: var(--bone);
+}
+.hero__name span { display: block; will-change: transform; }
+.hero__name span:last-child { color: var(--aqua); }
+.hero__meta { display: flex; flex-wrap: wrap; gap: 10px 24px; align-items: center; }
+.hero__role { font: 500 14px/1.2 var(--mono); letter-spacing: .14em; text-transform: uppercase; color: var(--bone); }
+
+/* Cartel de riesgo eléctrico: aparece en tus fotos, lo usamos como sello */
+.hazard {
+  display: inline-flex; align-items: center; gap: 10px;
+  background: var(--bone); color: var(--ink);
+  padding: 7px 12px 7px 9px; border-radius: 2px;
+  font: 800 13px/1.05 var(--display); letter-spacing: .06em; text-transform: uppercase;
+}
+.hazard svg { width: 22px; height: 20px; flex: none; }
+.scrollcue {
+  position: absolute; right: var(--gutter); bottom: clamp(48px, 9vh, 96px); z-index: 2;
+  font: 500 11px/1 var(--mono); letter-spacing: .14em; text-transform: uppercase; color: var(--bone);
+  writing-mode: vertical-rl;
+}
+@media (max-width: 560px) { .scrollcue { display: none; } }
+
+/* ---------- Escena 2: Manifiesto palabra por palabra ---------- */
+.manifesto {
+  padding-block: clamp(96px, 18vh, 200px);
+  display: grid; gap: 28px;
+}
+.manifesto__text {
+  font: 800 clamp(38px, 6.4vw, 96px)/1 var(--display);
+  text-transform: uppercase; max-width: 15ch;
+}
+.manifesto__text .w { color: var(--bone); transition: color .2s; }
+.js .manifesto__text .w { color: rgba(219,229,225,.16); }
+.manifesto__text .w.hl { color: var(--aqua); }
+
+/* ---------- Escena 3: Cortina B/N → color ---------- */
+.wipe { position: relative; height: 100svh; min-height: 520px; overflow: hidden; background: var(--ink); }
+.wipe__img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 50%; }
+.wipe__color { clip-path: inset(0 0 0 50%); }
+.wipe__bar {
+  position: absolute; top: 0; bottom: 0; left: 50%; width: 2px; background: var(--aqua);
+  box-shadow: 0 0 24px var(--aqua);
+}
+.wipe__label {
+  position: absolute; top: calc(76px + env(safe-area-inset-top, 0px));
+  font: 500 12px/1 var(--mono); letter-spacing: .14em; text-transform: uppercase;
+  background: rgba(10,14,13,.7); padding: 8px 10px; border-radius: 2px;
+}
+.wipe__label--l { left: var(--gutter); }
+.wipe__label--r { right: var(--gutter); color: var(--aqua); }
+.wipe__caption {
+  position: absolute; left: var(--gutter); bottom: clamp(32px, 7vh, 72px); right: var(--gutter);
+  font: 800 clamp(34px, 6vw, 84px)/.95 var(--display); text-transform: uppercase;
+  text-shadow: 0 2px 30px rgba(0,0,0,.45);
+}
+
+/* ---------- Escena 4: Viñetas en horizontal ---------- */
+.vinetas { position: relative; padding-block: clamp(80px, 12vh, 140px) 0; overflow: hidden; }
+.vinetas__head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: end; gap: 16px; margin-bottom: 32px; }
+.vinetas__title { font: 800 clamp(44px, 7vw, 104px)/.9 var(--display); text-transform: uppercase; }
+.vinetas__hint { font: 400 14px/1.5 var(--body); color: var(--concrete); max-width: 32ch; }
+.track {
+  display: flex; gap: clamp(14px, 2vw, 28px);
+  padding: 0 var(--gutter) clamp(80px, 12vh, 140px);
+  overflow-x: auto; scroll-snap-type: x mandatory; align-items: start;
+}
+.js-pin .track { overflow: visible; scroll-snap-type: none; width: max-content; }
+.frame {
+  flex: none; width: min(78vw, 980px); margin: 0; scroll-snap-align: center;
+  display: grid; gap: 12px;
+}
+.frame--tall { width: min(46vw, 520px); }
+.frame__img { aspect-ratio: 16 / 9; overflow: hidden; background: var(--deep); max-width: 100%; }
+.frame--tall .frame__img { aspect-ratio: 9 / 13; }
+.frame--more { align-self: start; }
+.frame--more a {
+  display: grid; align-content: end; gap: 14px; aspect-ratio: 16 / 9; max-width: 100%; padding: clamp(20px, 3vw, 36px);
+  background: var(--aqua); color: var(--ink); text-decoration: none; border-radius: 2px; transition: background .25s;
+}
+.frame--more a:hover { background: var(--bone); }
+.frame--more b { font: 900 clamp(26px, 5vw, 76px)/.9 var(--display); text-transform: uppercase; }
+@media (max-width: 700px) { .frame--more small:first-child { display: none; } }
+.frame--more small { font: 500 12px/1.4 var(--mono); letter-spacing: .1em; text-transform: uppercase; }
+
+.frame__img img { width: 100%; height: 100%; object-fit: cover; transform: scale(1.12); will-change: transform; }
+.frame figcaption { display: flex; justify-content: space-between; gap: 16px; font: 400 12px/1.4 var(--mono); color: var(--concrete); letter-spacing: .06em; }
+.frame figcaption b { color: var(--bone); font-weight: 500; }
+@media (max-width: 700px) { .frame--tall { width: min(70vw, 420px); } }
+
+/* ---------- Bio ---------- */
+.section { padding-block: clamp(96px, 16vh, 180px); }
+.section__head { display: grid; gap: 14px; margin-bottom: clamp(36px, 6vh, 64px); }
+.h2 { font: 800 clamp(48px, 8vw, 120px)/.88 var(--display); text-transform: uppercase; }
+
+.bio { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: clamp(32px, 6vw, 96px); align-items: start; }
+.bio__photo { position: relative; overflow: hidden; aspect-ratio: 3 / 4; max-width: 100%; background: var(--deep); }
+.bio__photo img { width: 100%; height: 118%; object-fit: cover; object-position: 50% 20%; will-change: transform; }
+.bio__photo .hazard { position: absolute; left: 14px; bottom: 14px; }
+.bio__body { display: grid; gap: 28px; min-width: 0; }
+.bio__lead { font: 600 clamp(22px, 2.4vw, 32px)/1.3 var(--body); max-width: 30ch; }
+.bio__text { color: var(--concrete); max-width: 62ch; display: grid; gap: 16px; }
+.bio__text strong { color: var(--bone); font-weight: 600; }
+.specs { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); border-top: 1px solid var(--line); }
+.spec { display: grid; gap: 6px; padding: 18px 16px 18px 0; border-bottom: 1px solid var(--line); }
+.spec dt { font: 500 11px/1 var(--mono); letter-spacing: .14em; text-transform: uppercase; color: var(--concrete); }
+.spec dd { margin: 0; font: 800 clamp(22px, 2.4vw, 30px)/1.05 var(--display); text-transform: uppercase; font-variant-numeric: tabular-nums; }
+@media (max-width: 820px) { .bio { grid-template-columns: 1fr; } .bio__photo { max-width: 460px; } }
+
+/* ---------- Sonido ---------- */
+.sound { background: var(--deep); }
+.sound__grid { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: clamp(32px, 6vw, 96px); align-items: center; }
+.sound__photo { position: relative; aspect-ratio: 4 / 5; overflow: hidden; background: var(--ink); max-width: 100%; }
+.sound__photo img { width: 100%; height: 116%; object-fit: cover; object-position: 50% 30%; will-change: transform; }
+.sound__photo span { position: absolute; left: 14px; top: 14px; font: 500 11px/1 var(--mono); letter-spacing: .14em; text-transform: uppercase; background: var(--ink); color: var(--aqua); padding: 7px 10px; border-radius: 2px; }
+.sound__body { display: grid; gap: 28px; min-width: 0; }
+.sound__body .section__head { margin: 0; }
+@media (max-width: 820px) { .sound__grid { grid-template-columns: 1fr; } .sound__photo { max-width: 460px; } }
+.mixes { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
+.mix a {
+  display: grid; grid-template-columns: 56px minmax(0, 1fr) auto auto; gap: 20px; align-items: center;
+  padding: 22px 0; border-bottom: 1px solid var(--line); text-decoration: none;
+  transition: padding .25s ease, background .25s ease;
+}
+.mix a:hover { padding-left: 14px; background: rgba(52,214,189,.06); }
+.mix__play {
+  width: 48px; height: 48px; border-radius: 50%; border: 1px solid var(--aqua);
+  display: grid; place-items: center; color: var(--aqua);
+}
+.mix__play svg { width: 14px; height: 14px; margin-left: 2px; }
+.mix__title { font: 800 clamp(24px, 3vw, 40px)/1 var(--display); text-transform: uppercase; }
+.mix__sub { display: block; margin-top: 6px; font: 400 13px/1.3 var(--body); color: var(--concrete); text-transform: none; }
+.mix__len, .mix__where { font: 400 12px/1 var(--mono); letter-spacing: .1em; text-transform: uppercase; color: var(--concrete); font-variant-numeric: tabular-nums; }
+.mix__where { color: var(--aqua); }
+@media (max-width: 640px) {
+  .mix a { grid-template-columns: 48px minmax(0, 1fr); }
+  .mix__len, .mix__where { grid-column: 2; }
+}
+
+/* ---------- Videos ---------- */
+.videos { display: grid; grid-template-columns: minmax(0, 3fr) minmax(0, 2fr); gap: clamp(14px, 2vw, 24px); }
+.video { display: grid; gap: 12px; text-decoration: none; }
+.video__thumb { position: relative; aspect-ratio: 16 / 11; overflow: hidden; background: var(--deep); max-width: 100%; }
+.video__thumb img { width: 100%; height: 100%; object-fit: cover; transition: transform .6s cubic-bezier(.2,.7,.2,1), filter .6s; filter: saturate(.85); }
+.video:hover .video__thumb img { transform: scale(1.06); filter: saturate(1.1); }
+.video__badge {
+  position: absolute; left: 14px; bottom: 14px;
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--ink); color: var(--bone); padding: 8px 12px 8px 10px; border-radius: 2px;
+  font: 500 11px/1 var(--mono); letter-spacing: .12em; text-transform: uppercase;
+}
+.video__badge svg { width: 10px; height: 10px; color: var(--signal); }
+.video__title { font: 800 26px/1 var(--display); text-transform: uppercase; }
+.video__meta { font: 400 12px/1.3 var(--mono); color: var(--concrete); letter-spacing: .06em; }
+@media (max-width: 820px) { .videos { grid-template-columns: 1fr; } .video__thumb { aspect-ratio: 16 / 10; } }
+
+/* ---------- Fechas + Rider ---------- */
+.split { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: clamp(40px, 6vw, 96px); }
+@media (max-width: 900px) { .split { grid-template-columns: 1fr; } }
+.h3 { font: 800 clamp(34px, 4vw, 56px)/.95 var(--display); text-transform: uppercase; margin-bottom: 24px; }
+.gigs { width: 100%; border-collapse: collapse; font-variant-numeric: tabular-nums; }
+.gigs td { padding: 16px 12px 16px 0; border-bottom: 1px solid var(--line); vertical-align: baseline; }
+.gigs tr:first-child td { border-top: 1px solid var(--line); }
+.gigs .d { font: 500 13px/1 var(--mono); color: var(--aqua); white-space: nowrap; letter-spacing: .06em; }
+.gigs .v { font: 800 22px/1.1 var(--display); text-transform: uppercase; }
+.gigs .c { font: 400 13px/1.3 var(--body); color: var(--concrete); text-align: right; }
+.rider { list-style: none; margin: 0; padding: 0; display: grid; }
+.rider li { display: flex; justify-content: space-between; gap: 16px; padding: 14px 0; border-bottom: 1px solid var(--line); }
+.rider li:first-child { border-top: 1px solid var(--line); }
+.rider span:first-child { color: var(--concrete); font: 400 12px/1.4 var(--mono); letter-spacing: .1em; text-transform: uppercase; }
+.rider span:last-child { text-align: right; font-weight: 500; }
+
+/* ---------- Booking ---------- */
+.booking { position: relative; overflow: hidden; padding-block: clamp(110px, 20vh, 220px); isolation: isolate; }
+.booking__bg { position: absolute; inset: -10% 0; z-index: -1; }
+.booking__bg img { width: 100%; height: 100%; object-fit: cover; object-position: 46% 45%; opacity: .4; }
+.booking__bg::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, var(--ink) 0%, rgba(10,14,13,.35) 40%, var(--ink) 100%); }
+.booking__inner { display: grid; gap: 28px; }
+.mail {
+  font: 800 clamp(30px, 6.2vw, 104px)/.95 var(--display);
+  color: var(--bone); overflow-wrap: anywhere; user-select: all;
+}
+.actions { display: flex; flex-wrap: wrap; gap: 12px; }
+.btn {
+  display: inline-flex; align-items: center; gap: 10px; cursor: pointer;
+  font: 500 13px/1 var(--mono); letter-spacing: .1em; text-transform: uppercase;
+  padding: 16px 20px; border-radius: 2px; text-decoration: none;
+  border: 1px solid var(--bone); color: var(--bone); background: transparent;
+  transition: background .2s, color .2s;
+}
+.btn:hover { background: var(--bone); color: var(--ink); }
+.btn--solid { background: var(--aqua); border-color: var(--aqua); color: var(--ink); }
+.btn--solid:hover { background: var(--bone); border-color: var(--bone); }
+.socials { display: flex; flex-wrap: wrap; gap: 10px 28px; list-style: none; margin: 16px 0 0; padding: 0; }
+.socials a { font: 800 24px/1 var(--display); text-transform: uppercase; text-decoration: none; letter-spacing: .02em; }
+.socials a:hover { color: var(--aqua); }
+
+footer { padding: 28px var(--gutter) calc(80px + env(safe-area-inset-bottom, 0px)); display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; font: 400 12px/1.4 var(--mono); color: var(--concrete); letter-spacing: .06em; border-top: 1px solid var(--line); }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .frame__img img { transform: none; }
+}
+</style>
+<style>body{margin:0}[hidden]{display:none!important}</style>
+</head>
+<body>
+<nav class="nav" aria-label="Secciones">
+  <a class="nav__mark" href="#top">FG</a>
+  <ul class="nav__links">
+    <li><a href="#bio">Bio</a></li>
+    <li><a href="#sonido">Sonido</a></li>
+    <li><a href="#videos">Videos</a></li>
+    <li><a href="#booking">Booking</a></li>
+  </ul>
+</nav>
+
+
+<main id="top">
+
+  <!-- Escena 1 -->
+  <header class="hero" id="hero">
+    <img class="hero__img" id="heroImg" src="img/fg-116.jpg" alt="Fede Godoy apoyado en una columna, con luz y sombra de árboles" fetchpriority="high">
+    <div class="hero__shade"></div>
+    <div class="hero__content">
+      <h1 class="hero__name" aria-label="Fede Godoy"><span>Fede</span><span>Godoy</span></h1>
+      <div class="hero__meta">
+        <span class="hero__role">DJ · Córdoba, Argentina</span>
+        <span class="hazard" aria-hidden="true">
+          <svg viewBox="0 0 24 22"><path d="M12 1 23 21H1Z" fill="#0a0e0d"/><path d="M12 4.2 20.3 19H3.7Z" fill="#f2c230"/><path d="M13.2 7.5 9.6 13h2.6l-1.4 4.6 3.9-6h-2.6z" fill="#0a0e0d"/></svg>
+          Riesgo de choque eléctrico
+        </span>
+      </div>
+    </div>
+    <span class="scrollcue" aria-hidden="true">Scroll ↓</span>
+  </header>
+
+  <!-- Escena 2 -->
+  <section class="manifesto wrap" aria-label="Manifiesto">
+    <span class="eyebrow">El sonido</span>
+    <p class="manifesto__text" id="manifesto">Groove de tech house, atmósferas melódicas y percusión que respira.</p>
+  </section>
+
+  <!-- Escena 3 -->
+  <section class="wipe" id="wipe" aria-label="Fotos en blanco y negro y color">
+    <img class="wipe__img" src="img/fg-65.jpg" alt="Fede Godoy junto a un tablero eléctrico, en blanco y negro">
+    <img class="wipe__img wipe__color" id="wipeColor" src="img/fg-64.jpg" alt="" aria-hidden="true">
+    <span class="wipe__bar" id="wipeBar" aria-hidden="true"></span>
+    <span class="wipe__label wipe__label--l">Día</span>
+    <span class="wipe__label wipe__label--r">Noche</span>
+    <p class="wipe__caption">De la calle<br>a la cabina</p>
+  </section>
+
+  <!-- Escena 4 -->
+  <section class="vinetas" id="vinetas" aria-label="Galería de prensa">
+    <div class="vinetas__head wrap">
+      <h2 class="vinetas__title">Fotos de prensa</h2>
+      <p class="vinetas__hint">Una selección. La carpeta completa en alta está en Drive, al final de la galería.</p>
+    </div>
+    <div class="track" id="track">
+      <figure class="frame"><div class="frame__img"><img src="img/fg-93.jpg" alt="Retrato junto a una reja con alambre de púas" loading="lazy"></div><figcaption><b>N.º 93</b><span>Horizontal · color</span></figcaption></figure>
+      <figure class="frame"><div class="frame__img"><img src="img/fg-80.jpg" alt="Perfil entre paredes turquesa" loading="lazy"></div><figcaption><b>N.º 80</b><span>Horizontal · color</span></figcaption></figure>
+      <figure class="frame"><div class="frame__img"><img src="img/fg-55.jpg" alt="Retrato frente a una pared turquesa agrietada" loading="lazy"></div><figcaption><b>N.º 55</b><span>Horizontal · color</span></figcaption></figure>
+      <figure class="frame"><div class="frame__img"><img src="img/fg-76.jpg" alt="De perfil con brazos cruzados frente a un depósito enrejado, blanco y negro" loading="lazy"></div><figcaption><b>N.º 76</b><span>Horizontal · B/N</span></figcaption></figure>
+      <figure class="frame"><div class="frame__img"><img src="img/fg-77.jpg" alt="Retrato en blanco y negro frente a reja con cartel de combustible" loading="lazy"></div><figcaption><b>N.º 77</b><span>Horizontal · B/N</span></figcaption></figure>
+      <figure class="frame"><div class="frame__img"><img src="img/fg-15.jpg" alt="Con capucha frente a una galería de columnas turquesa" loading="lazy"></div><figcaption><b>N.º 15</b><span>Horizontal · color</span></figcaption></figure>
+      <div class="frame frame--more"><a href="https://drive.google.com/drive/folders/10WZ8jd4y7wuB22-TA0KYnA2VnulL1sjV" target="_blank" rel="noopener"><small>Carpeta completa en alta resolución</small><b>Ver todas las fotos ↗</b><small>Google Drive</small></a></div>
+    </div>
+  </section>
+
+  <!-- Bio -->
+  <section class="section wrap" id="bio" aria-labelledby="bio-h">
+    <div class="bio">
+      <div class="bio__photo"><img id="bioImg" src="img/fg-68.jpg" alt="Retrato de Fede Godoy de perfil frente a una pared turquesa" loading="lazy" style="object-position: 34% 30%"></div>
+      <div class="bio__body">
+        <div class="section__head" style="margin:0">
+          <span class="eyebrow">Bio</span>
+          <h2 class="h2" id="bio-h">El código detrás del groove</h2>
+        </div>
+        <p class="bio__lead">Fede Godoy es DJ de Córdoba, Argentina. Se mueve entre el tech house, el deep y el progressive, con un oído atento a la percusión.</p>
+        <div class="bio__text">
+          <p>Antes de las bandejas está la programación. Federico Nicolás Godoy viene del desarrollo de software, y eso se nota en cómo trabaja: <strong>sets construidos con estructura</strong>, flujos de audio pensados al detalle y un dominio natural del ecosistema digital detrás de cada set y cada transmisión.</p>
+          <p>Su base es el <strong>tech house, el deep house y el progressive</strong>, con pasadas por el melodic house &amp; techno, el minimal deep tech y el indie dance. Cuando la pista lo pide, acelera hacia el speed garage, el UK garage y el tribal hardgroove, con congas y bongos al frente.</p>
+          <p>En el tech house y el minimal toma referencia de Franky Rizardo, Nacho Scoppa, Max Styler, Beltran y Nacho Bolognani. En lo melódico, de Ezequiel Arias, Mariano Mellino y Simon Vuarambon.</p>
+        </div>
+        <dl class="specs">
+          <div class="spec"><dt>Base</dt><dd>Córdoba, AR</dd></div>
+          <div class="spec"><dt>Núcleo</dt><dd>Tech · Deep House</dd></div>
+          <div class="spec"><dt>Melódico</dt><dd>Progressive · Melodic</dd></div>
+          <div class="spec"><dt>Acelerado</dt><dd>UK Garage · Hardgroove</dd></div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sonido -->
+  <section class="section sound" id="sonido" aria-labelledby="sonido-h">
+    <div class="wrap sound__grid">
+      <div class="sound__photo"><img id="liveImg" src="img/fg-live.jpg" alt="Fede Godoy mezclando en vivo, con auriculares y luz roja" loading="lazy"><span>En vivo</span></div>
+      <div class="sound__body">
+        <div class="section__head">
+          <span class="eyebrow">Escuchá</span>
+          <h2 class="h2" id="sonido-h">Mixes</h2>
+        </div>
+        <ul class="mixes">
+          <li class="mix"><a href="https://soundcloud.com/fede-godoy-dj/groove-radio-mix001-indie" target="_blank" rel="noopener">
+            <span class="mix__play" aria-hidden="true"><svg viewBox="0 0 14 14"><path d="M1 0 13 7 1 14Z" fill="currentColor"/></svg></span>
+            <span class="mix__title">Groove Radio Mix001<span class="mix__sub">Indie dance · versión audio</span></span>
+            <span class="mix__len">Audio</span>
+            <span class="mix__where">SoundCloud ↗</span>
+          </a></li>
+          <li class="mix"><a href="https://youtu.be/beYS8I3Y9-4" target="_blank" rel="noopener">
+            <span class="mix__play" aria-hidden="true"><svg viewBox="0 0 14 14"><path d="M1 0 13 7 1 14Z" fill="currentColor"/></svg></span>
+            <span class="mix__title">Groove Radio Mix001<span class="mix__sub">El mismo set, filmado</span></span>
+            <span class="mix__len">Video</span>
+            <span class="mix__where">YouTube ↗</span>
+          </a></li>
+        </ul>
+        <div class="actions">
+          <a class="btn" href="https://soundcloud.com/fede-godoy-dj" target="_blank" rel="noopener">Todo en SoundCloud ↗</a>
+          <a class="btn" href="https://www.youtube.com/@fedegodoydj" target="_blank" rel="noopener">Canal de YouTube ↗</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Videos -->
+  <section class="section wrap" id="videos" aria-labelledby="videos-h">
+    <div class="section__head">
+      <span class="eyebrow">En vivo</span>
+      <h2 class="h2" id="videos-h">Videos</h2>
+    </div>
+    <div class="videos">
+      <a class="video" href="https://youtu.be/beYS8I3Y9-4" target="_blank" rel="noopener">
+        <div class="video__thumb"><img src="img/fg-71.jpg" alt="" loading="lazy" style="object-position: 45% 30%"><span class="video__badge"><svg viewBox="0 0 10 10"><circle cx="5" cy="5" r="5" fill="currentColor"/></svg>YouTube</span></div>
+        <span class="video__title">Groove Radio Mix001</span>
+        <span class="video__meta">Set completo filmado · indie dance</span>
+      </a>
+      <a class="video" href="https://www.youtube.com/@fedegodoydj" target="_blank" rel="noopener">
+        <div class="video__thumb"><img src="img/fg-16.jpg" alt="" loading="lazy" style="object-position: 40% 50%"><span class="video__badge"><svg viewBox="0 0 10 10"><circle cx="5" cy="5" r="5" fill="currentColor"/></svg>Canal</span></div>
+        <span class="video__title">@fedegodoydj</span>
+        <span class="video__meta">Todos los sets en YouTube</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- Fechas + Rider -->
+  <section class="section wrap" aria-label="Fechas y rider técnico" style="padding-top:0">
+    <div class="split">
+      <div>
+        <h3 class="h3">Fechas</h3>
+        <div style="overflow-x:auto">
+          <table class="gigs">
+            <tr><td class="d">T.B.A.</td><td class="v">Próximas fechas por anunciar</td><td class="c">Córdoba</td></tr>
+            <tr><td class="d">2026 / 27</td><td class="v">Booking abierto</td><td class="c">Clubes, fiestas y eventos</td></tr>
+          </table>
+        </div>
+      </div>
+      <div>
+        <h3 class="h3">Rider técnico</h3>
+        <ul class="rider">
+          <li><span>Players</span><span>Pioneer CDJ-3000 · CDJ-2000NXS2 · CDJ-1000</span></li>
+          <li><span>Mixer</span><span>Pioneer DJM-V10 (preferido)</span></li>
+          <li><span>Formato</span><span>USB exportado desde Rekordbox</span></li>
+          <li><span>Estudio y streaming</span><span>Pioneer XDJ-RR · Edifier MR5</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Booking -->
+  <section class="booking" id="booking" aria-labelledby="booking-h">
+    <div class="booking__bg" aria-hidden="true"><img id="bookImg" src="img/fg-booking.jpg" alt="" loading="lazy"></div>
+    <div class="wrap booking__inner">
+      <span class="eyebrow" id="booking-h">Booking y prensa</span>
+      <p class="mail" id="mail">fede.godoy1@gmail.com</p>
+      <div class="actions">
+        <button class="btn btn--solid" id="copyBtn" type="button">Copiar email</button>
+        <a class="btn" href="https://drive.google.com/drive/folders/10WZ8jd4y7wuB22-TA0KYnA2VnulL1sjV" target="_blank" rel="noopener">Fotos en alta ↗</a>
+      </div>
+      <ul class="socials">
+        <li><a href="https://soundcloud.com/fede-godoy-dj" target="_blank" rel="noopener">SoundCloud</a></li>
+        <li><a href="https://www.youtube.com/@fedegodoydj" target="_blank" rel="noopener">YouTube</a></li>
+      </ul>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <span>Fede Godoy · Córdoba, Argentina</span>
+  <span>Fotos: <a href="https://www.instagram.com/cente.capturas/" target="_blank" rel="noopener">@cente.capturas</a></span>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script>
+(function () {
+  // Copiar email (funciona sin animaciones)
+  var btn = document.getElementById('copyBtn');
+  var mail = document.getElementById('mail');
+  btn.addEventListener('click', function () {
+    var text = mail.textContent.trim();
+    var done = function () { btn.textContent = 'Copiado'; setTimeout(function () { btn.textContent = 'Copiar email'; }, 1800); };
+    var fallback = function () {
+      var r = document.createRange(); r.selectNodeContents(mail);
+      var s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
+      btn.textContent = 'Seleccionado: Ctrl+C';
+    };
+    try { navigator.clipboard.writeText(text).then(done, fallback); } catch (e) { fallback(); }
+  });
+
+  // Manifiesto: dividir en palabras
+  var man = document.getElementById('manifesto');
+  man.innerHTML = man.textContent.trim().split(/\s+/).map(function (w) { return '<span class="w">' + w + '</span>'; }).join(' ');
+
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduce || !window.gsap || !window.ScrollTrigger) return;
+
+  gsap.registerPlugin(ScrollTrigger);
+  document.documentElement.classList.add('js');
+
+  // 1 · Hero fijado: la foto se acerca y el nombre se abre
+  gsap.timeline({ scrollTrigger: { trigger: '#hero', start: 'top top', end: '+=90%', scrub: true, pin: true } })
+    .to('.hero__img', { scale: 1.18, yPercent: 6, ease: 'none' }, 0)
+    .to('.hero__name span:first-child', { xPercent: -14, ease: 'none' }, 0)
+    .to('.hero__name span:last-child', { xPercent: 14, ease: 'none' }, 0)
+    .to('.hero__meta, .scrollcue', { opacity: 0, y: -20, ease: 'none' }, 0.5);
+
+  // 2 · Manifiesto: se encienden las palabras
+  var words = man.querySelectorAll('.w');
+  ScrollTrigger.create({
+    trigger: man, start: 'top 80%', end: 'bottom 45%', scrub: true,
+    onUpdate: function (self) {
+      var n = Math.round(self.progress * words.length);
+      words.forEach(function (w, i) { w.classList.toggle('hl', i < n); });
+    }
+  });
+
+  // 3 · Cortina blanco y negro → color
+  var wipe = { p: 100 };
+  gsap.to(wipe, {
+    p: 0, ease: 'none',
+    scrollTrigger: { trigger: '#wipe', start: 'top top', end: '+=120%', scrub: true, pin: true },
+    onUpdate: function () {
+      document.getElementById('wipeColor').style.clipPath = 'inset(0 0 0 ' + wipe.p + '%)';
+      document.getElementById('wipeBar').style.left = wipe.p + '%';
+    }
+  });
+
+  // 4 · Viñetas: scroll vertical que mueve la galería en horizontal
+  var track = document.getElementById('track');
+  var sec = document.getElementById('vinetas');
+  sec.classList.add('js-pin');
+  var dist = function () { return Math.max(0, track.scrollWidth - window.innerWidth); };
+  var hz = gsap.to(track, {
+    x: function () { return -dist(); }, ease: 'none',
+    scrollTrigger: { trigger: sec, start: 'top top', end: function () { return '+=' + dist(); }, scrub: true, pin: true, invalidateOnRefresh: true }
+  });
+  gsap.utils.toArray('.frame__img img').forEach(function (img) {
+    gsap.fromTo(img, { xPercent: -6 }, { xPercent: 6, ease: 'none',
+      scrollTrigger: { trigger: img.parentNode, containerAnimation: hz, start: 'left right', end: 'right left', scrub: true } });
+  });
+
+  // Parallax suave en bio y booking
+  gsap.fromTo('#bioImg', { yPercent: -8 }, { yPercent: 0, ease: 'none', scrollTrigger: { trigger: '#bio', start: 'top bottom', end: 'bottom top', scrub: true } });
+  gsap.fromTo('#bookImg', { yPercent: -10 }, { yPercent: 10, ease: 'none', scrollTrigger: { trigger: '#booking', start: 'top bottom', end: 'bottom top', scrub: true } });
+
+  gsap.fromTo('#liveImg', { yPercent: -10 }, { yPercent: 0, ease: 'none', scrollTrigger: { trigger: '#sonido', start: 'top bottom', end: 'bottom top', scrub: true } });
+
+  window.addEventListener('load', function () { ScrollTrigger.refresh(); });
+})();
+</script>
+
+</body>
+</html>
