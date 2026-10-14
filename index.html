@@ -283,6 +283,14 @@ p { margin: 0; }
 .booking__bg img { width: 100%; height: 100%; object-fit: cover; object-position: 46% 45%; opacity: .4; }
 .booking__bg::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, var(--ink) 0%, rgba(10,14,13,.35) 40%, var(--ink) 100%); }
 .booking__inner { display: grid; gap: 28px; }
+@media (min-width: 821px) { .booking__inner > * { max-width: 56vw; } .mail { font-size: clamp(30px, 3.7vw, 66px); white-space: nowrap; } .booking__bg img { opacity: .58; } }
+@media (max-width: 820px) { .mail { font-size: clamp(22px, 7.2vw, 48px); } }
+@media (max-width: 820px) {
+  .booking { padding-top: min(105vw, 520px); }
+  .booking__bg { inset: 0; }
+  .booking__bg::after { background: linear-gradient(180deg, var(--ink) 0%, rgba(10,14,13,0) 14%, rgba(10,14,13,0) 42%, var(--ink) 72%); }
+  .booking__bg img { opacity: .75; object-position: var(--mpos, 50% 20%) !important; }
+}
 .mail {
   font: 800 clamp(30px, 6.2vw, 104px)/.95 var(--display);
   color: var(--bone); overflow-wrap: anywhere; user-select: all;
@@ -477,7 +485,7 @@ footer { padding: 28px var(--gutter) calc(80px + env(safe-area-inset-bottom, 0px
 
   <!-- Booking -->
   <section class="booking" id="booking" aria-labelledby="booking-h">
-    <div class="booking__bg" aria-hidden="true"><img id="bookImg" src="img/fg-booking.jpg" alt="" loading="lazy"></div>
+    <div class="booking__bg" aria-hidden="true"><img id="bookImg" src="img/fg-29.jpg" alt="" loading="lazy" style="object-position: 56% 18%; --mpos: 55% 12%"></div>
     <div class="wrap booking__inner">
       <span class="eyebrow" id="booking-h">Booking y prensa</span>
       <p class="mail" id="mail">fede.godoy1@gmail.com</p>
