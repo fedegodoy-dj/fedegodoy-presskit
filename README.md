@@ -19,6 +19,6 @@ Landing de presskit de Fede Godoy (DJ, Córdoba, Argentina). Sitio estático: un
 
 - Textos, links y email: todo está en `index.html`.
 - Fotos: reemplazá el archivo en `img/` manteniendo el mismo nombre, o cambiá el `src` en `index.html`.
-- Las animaciones usan GSAP + ScrollTrigger desde cdnjs. Con "reducir movimiento" activado en el sistema, la página se muestra sin animaciones.
+- Las animaciones son CSS + un poco de JavaScript propio, sin librerías externas: scroll por pantalla (scroll-snap), entrada animada de cada página y carrusel automático de fotos. Con "reducir movimiento" activado en el sistema, la página se muestra sin animaciones.
 
 Fotos: [@cente.capturas](https://www.instagram.com/cente.capturas/)
