@@ -279,7 +279,7 @@ p { margin: 0; }
 }
 
 /* ---------- Reproductor dentro de Mixes ---------- */
-.player { position:relative; display:block; height:clamp(170px,calc(100svh - 590px),380px); overflow:hidden; background:var(--ink); margin-top:4px; }
+.player { position:relative; display:block; height:clamp(110px,calc(100svh - 655px),380px); overflow:hidden; background:var(--ink); margin-top:4px; }
 .player img { width:100%; height:100%; object-fit:cover; filter:saturate(.9); }
 .player::after { content:""; position:absolute; inset:0; background:linear-gradient(0deg,rgba(10,14,13,.75),rgba(10,14,13,0) 55%); }
 .player__btn { position:absolute; inset:0; margin:auto; width:76px; height:76px; border-radius:50%; background:var(--aqua); color:var(--ink); display:grid; place-items:center; z-index:2; }
@@ -451,6 +451,12 @@ footer { position: absolute; left: 0; right: 0; bottom: 0; padding: 20px var(--g
           <h2 class="h2" id="sonido-h">Mixes</h2>
         </div>
         <ul class="mixes" data-a style="--d:.35s">
+          <li class="mix"><a href="https://youtu.be/CER1CXxnXBk" target="_blank" rel="noopener">
+            <span class="mix__play" aria-hidden="true"><svg viewBox="0 0 14 14"><path d="M1 0 13 7 1 14Z" fill="currentColor"/></svg></span>
+            <span class="mix__title">Groove Radio Mix 002<span class="mix__sub">Indie dance / tech house</span></span>
+            <span class="mix__len">Video</span>
+            <span class="mix__where">YouTube ↗</span>
+          </a></li>
           <li class="mix"><a href="https://soundcloud.com/fede-godoy-dj/groove-radio-mix001-indie" target="_blank" rel="noopener">
             <span class="mix__play" aria-hidden="true"><svg viewBox="0 0 14 14"><path d="M1 0 13 7 1 14Z" fill="currentColor"/></svg></span>
             <span class="mix__title">Groove Radio Mix 001<span class="mix__sub">Indie dance · versión audio</span></span>
@@ -464,7 +470,7 @@ footer { position: absolute; left: 0; right: 0; bottom: 0; padding: 20px var(--g
             <span class="mix__where">YouTube ↗</span>
           </a></li>
         </ul>
-        <a class="player" data-a style="--d:.45s" href="https://youtu.be/CER1CXxnXBk" target="_blank" rel="noopener" aria-label="Ver Groove Radio Mix 002 en YouTube"><img src="img/fg-mix002.jpg" alt="" loading="lazy" style="object-position:50% 50%"><span class="player__btn" aria-hidden="true"><svg viewBox="0 0 14 14"><path d="M1 0 13 7 1 14Z" fill="currentColor"/></svg></span><span class="player__cap">Nuevo · Groove Radio Mix 002 · Indie dance / tech house · YouTube ↗</span></a>
+        <a class="player" data-a style="--d:.45s" href="__MIX003_URL__" target="_blank" rel="noopener" aria-label="Ver Groove Radio Mix 003 en YouTube"><img src="img/fg-mix003.jpg" alt="" loading="lazy" style="object-position:50% 50%"><span class="player__btn" aria-hidden="true"><svg viewBox="0 0 14 14"><path d="M1 0 13 7 1 14Z" fill="currentColor"/></svg></span><span class="player__cap">Nuevo · Groove Radio Mix 003 · Progressive house · YouTube ↗</span></a>
         <div class="actions" data-a style="--d:.5s">
           <a class="btn" href="https://soundcloud.com/fede-godoy-dj" target="_blank" rel="noopener">Todo en SoundCloud ↗</a>
           <a class="btn" href="https://www.youtube.com/@fedegodoydj" target="_blank" rel="noopener">Canal de YouTube ↗</a>
